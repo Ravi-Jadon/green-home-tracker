@@ -90,7 +90,7 @@ const Appliances = () => {
             <p className="text-sm text-muted-foreground">kWh/month = (W × hrs/day × days) ÷ 1000</p>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={onSubmit} className="space-y-4">
               <div>
                 <Label htmlFor="name">Appliance name</Label>
                 <Input id="name" placeholder="e.g. Living Room AC" {...register("name")} />
