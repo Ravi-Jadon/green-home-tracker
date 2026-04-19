@@ -49,7 +49,7 @@ const iconFor = (c: Appliance["category"]) => {
 const Appliances = () => {
   const { appliances, addAppliance, deleteAppliance, updateAppliance, ratePerKwh } = useEnergy();
 
-  const { register, handleSubmit, watch, reset, setValue, formState: { errors } } = useForm<FormValues>({
+  const { register, handleSubmit, watch, reset, setValue, formState: { errors } } = useForm<FormValues, any, FormValues>({
     resolver: zodResolver(schema),
     defaultValues: { name: "", category: "Other", wattage: 100, hoursPerDay: 4, daysPerMonth: 30, status: "Active" },
   });
