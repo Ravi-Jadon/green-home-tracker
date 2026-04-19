@@ -65,10 +65,17 @@ const Appliances = () => {
     [appliances]
   );
 
-  const onSubmit = (v: FormValues) => {
-    addAppliance(v);
+  const onSubmit = handleSubmit((v) => {
+    addAppliance({
+      name: v.name,
+      category: v.category,
+      wattage: Number(v.wattage),
+      hoursPerDay: Number(v.hoursPerDay),
+      daysPerMonth: Number(v.daysPerMonth),
+      status: v.status,
+    });
     reset();
-  };
+  });
 
   const [deleteId, setDeleteId] = useState<string | null>(null);
 
